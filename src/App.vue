@@ -5,6 +5,15 @@ const contacts = ref([]);
     const name = ref("");
     const phone = ref("")
 
+    const addContact = () => {
+      if (!name.value.trim() || !phone.value.trim()) {
+        alert("Please enter both name and phone number.");
+        return;
+      }
+      contacts.value.push({ name: name.value, phone: phone.value });
+      name.value = "";
+      phone.value = "";
+    };
 
 </script>
 
@@ -20,7 +29,9 @@ const contacts = ref([]);
     <input v-model="phone" type="text" id="phone" placeholder="Enter Phone Number">
 
     <button @click="addContact">Add Contact</button>
-  </div>  
+  </div>
+  
+  <h2>Saved Contacts</h2>
 
 </div>
 
