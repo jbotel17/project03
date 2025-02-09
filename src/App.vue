@@ -15,6 +15,10 @@ const contacts = ref([]);
       phone.value = "";
     };
 
+    const deleteContact = (index) => {
+      contacts.value.splice(index, 1);
+    };
+
 </script>
 
 <template>
@@ -33,7 +37,13 @@ const contacts = ref([]);
   
   <h2>Saved Contacts</h2>
 
-</div>
+  <ul>
+      <li v-for="(contact, index) in contacts" :key="index">
+        {{ contact.name }} - {{ contact.phone }}
+        <button class="deleteBtn" @click="deleteContact(index)"></button>
+      </li>
+    </ul>
 
+</div>
 
 </template>
