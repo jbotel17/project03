@@ -105,7 +105,7 @@ input {
 button {
   padding: 10px;
   font-size: 16px;
-  background-color: blue;
+  background-color: green;
   color: white;
   border: none;
   cursor: pointer;
@@ -121,7 +121,7 @@ ul {
 }
 
 li {
-  background: lightgray;
+  background: black;
   padding: 10px;
   margin: 5px 0;
   display: flex;
